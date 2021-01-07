@@ -1,0 +1,219 @@
+/**
+ * 应用项目表
+ */
+entity AppProject {
+    /** 项目名称 */
+    ProjectName String,
+    /** 项目描述 */
+    ProjectDescription String maxlength(100)
+}
+
+/**
+ * 应用信息表
+ */
+entity AppStack {
+    /** 应用名 */
+    appStackName String required maxlength(30),
+    /** 项目id */
+    AppProjectId Long required,
+    /** 所属项目名 */
+    projectName String required maxlength(30),
+    /** 序号 */
+    appStackOrder Integer,
+    /** 前端入口服务id*/
+    entranceServiceId Long required,
+    /** 应用类型，1-应用支撑应用、2-服务治理应用 */
+    appStackType Integer required,
+    /** 删除状态（0，正常，1已删除）*/
+    delFlag Integer required,
+    /** 创建人id*/
+    createById String maxlength(40),
+    /** 创建人*/
+    createByName String maxlength(40),
+    /** 创建时间*/
+    createTime ZonedDateTime,
+    /** 最后更新人id*/
+    lastModifierId String maxlength(40),
+    /** 最后更新人*/
+    lastModifierName String maxlength(40),
+    /**最后更新时间*/
+    lastModifyTime ZonedDateTime
+}
+
+
+
+/**
+ * 应用服务信息
+ */
+entity AppService {
+    /** 应用id*/
+    appStackId Long required,
+    /** 应用服务名 */
+    serviceName String required maxlength(30),
+    /** 中文名 */
+    serviceNameZh String maxlength(30),
+    /** 服务描述 */
+    serviceDescribe String maxlength(1000),
+    /** 服务类型 */
+    serviceType Integer required,
+    /** 服务全局唯一id */
+    guid String unique maxlength(40),
+    /** git群组 */
+    gitCompany String required,
+    /** 代码仓库地址 */
+    gitUrl String,
+    /** 代码仓库名 */
+    repositoryName String required maxlength(40),
+    /** 包名称后缀 */
+    packageNameSuffix String required maxlength(40),
+    /** 服务序号 */
+    serviceOder Integer,
+    /** 企业唯一id */
+    companyId String maxlength(40),
+    /** 服务提供商 */
+    serviceProvider String maxlength(60),
+    /** 备注 */
+    remark String,
+    /** 删除状态（0，正常，1已删除）*/
+    delFlag Integer required,
+    /** 创建人id*/
+    createById String maxlength(40),
+    /** 创建人*/
+    createByName String maxlength(40),
+    /** 创建时间*/
+    createTime ZonedDateTime,
+    /** 最后更新人id*/
+    lastModifierId String maxlength(40),
+    /** 最后更新人*/
+    lastModifierName String maxlength(40),
+    /**最后更新时间*/
+    lastModifyTime ZonedDateTime
+
+}
+
+/**
+ * 应用服务环境表
+ */
+entity AppServiceProfile {
+
+    /** 服务id */
+    serviceId Long required,
+    /** 序号 */
+    noteOrder Integer,  
+     /** 环境名*/
+    envName String maxlength(40),
+    /** 环境描述 */
+    envDescribe String maxlength(1000),
+    /** 所处分支名*/
+    branchName String maxlength(40),
+    /** 镜像tag */
+    imageTag String maxlength(200),
+    /** 服务版本号 */
+    serviceVersion String maxlength(100),
+    /** 服务状态，0-正常，1-停用，…*/
+    status Integer required,
+    /** 应用指定端口 */
+    servicePort Integer required,
+    /** 服务入口url */
+    entranceUrl String maxlength(200),
+    /** 服务api文档url */
+    apiUrl String maxlength(200),
+    /** 删除状态（0，正常，1已删除）*/
+    delFlag Integer required,
+    /** 创建人id*/
+    createById String maxlength(40),
+    /** 创建人*/
+    createByName String maxlength(20),
+    /** 创建时间*/
+    createTime ZonedDateTime,
+    /** 最后更新人id*/
+    lastModifierId String maxlength(40),
+    /** 最后更新人*/
+    lastModifierName String maxlength(20),
+    /**最后更新时间*/
+    lastModifyTime ZonedDateTime
+}
+
+/**
+ * 应用服务说明
+ */
+entity AppServiceNote {
+    /** 服务id */
+    serviceId Long required,
+    /** 服务说明标题 */
+    title String maxlength(200),
+    /** 服务说明内容 */
+    content String maxlength(300),
+    /** 序号 */
+    noteOrder Integer,
+    /** 删除状态（0，正常，1已删除）*/
+    delFlag Integer required,
+    /** 创建人id*/
+    createById String maxlength(40),
+    /** 创建人*/
+    createByName String maxlength(40),
+    /** 创建时间*/
+    createTime ZonedDateTime,
+    /** 最后更新人id*/
+    lastModifierId String maxlength(40),
+    /** 最后更新人*/
+    lastModifierName String maxlength(40),
+    /**最后更新时间*/
+    lastModifyTime ZonedDateTime
+}
+
+/**
+ * 应用用户表
+ */
+entity AppUser {
+    /** 应用id */
+    appId Long required,
+    /** 用户id */
+    userId Long required,
+    /** 删除状态（0，正常，1已删除）*/
+    delFlag Integer required,
+    /** 创建人id*/
+    createById String maxlength(40),
+    /** 创建人*/
+    createByName String maxlength(40),
+    /** 创建时间*/
+    createTime ZonedDateTime,
+    /** 最后更新人id*/
+    lastModifierId String maxlength(40),
+    /** 最后更新人*/
+    lastModifierName String maxlength(40),
+    /**最后更新时间*/
+    lastModifyTime ZonedDateTime
+}
+
+/**
+ * jdl文件记录表
+ */
+entity JdlRecord {
+    /** 服务id */
+    serviceId Long required,
+    /** 文件内容 */
+    content Blob required,
+    /** 执行信息 */
+    message String maxlength(200),
+    /** 服务全局唯一id */
+    guid String unique required maxlength(40),
+    /** 删除状态（0，正常，1已删除）*/
+    delFlag Integer required,
+    /** 创建人id*/
+    createById String maxlength(40),
+    /** 创建人*/
+    createByName String maxlength(40),
+    /** 创建时间*/
+    createTime ZonedDateTime,
+    /** 最后更新人id*/
+    lastModifierId String maxlength(40),
+    /** 最后更新人*/
+    lastModifierName String maxlength(40),
+    /**最后更新时间*/
+    lastModifyTime ZonedDateTime
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
