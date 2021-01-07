@@ -1,0 +1,7 @@
+/**
+  * 用户表
+  */
+entity User {
+	userName String,
+    userAge Long
+}
