@@ -1,0 +1,165 @@
+{
+  "name": "AppServiceProfile",
+  "fields": [
+    {
+      "fieldName": "serviceId",
+      "fieldType": "Long",
+      "javadoc": "服务id",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "noteOrder",
+      "fieldType": "Integer",
+      "javadoc": "序号"
+    },
+    {
+      "fieldName": "envName",
+      "fieldType": "String",
+      "javadoc": "环境名",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "envDescribe",
+      "fieldType": "String",
+      "javadoc": "环境描述",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "branchName",
+      "fieldType": "String",
+      "javadoc": "所处分支名",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "imageTag",
+      "fieldType": "String",
+      "javadoc": "镜像tag",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "serviceVersion",
+      "fieldType": "String",
+      "javadoc": "服务版本号",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Integer",
+      "javadoc": "服务状态，0-正常，1-停用，…",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "servicePort",
+      "fieldType": "Integer",
+      "javadoc": "应用指定端口",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "entranceUrl",
+      "fieldType": "String",
+      "javadoc": "服务入口url",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "apiUrl",
+      "fieldType": "String",
+      "javadoc": "服务api文档url",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "delFlag",
+      "fieldType": "Integer",
+      "javadoc": "删除状态（0，正常，1已删除）",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "createById",
+      "fieldType": "String",
+      "javadoc": "创建人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "createByName",
+      "fieldType": "String",
+      "javadoc": "创建人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间"
+    },
+    {
+      "fieldName": "lastModifierId",
+      "fieldType": "String",
+      "javadoc": "最后更新人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "lastModifierName",
+      "fieldType": "String",
+      "javadoc": "最后更新人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "lastModifyTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "最后更新时间"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210107025224",
+  "javadoc": "应用服务环境表",
+  "entityTableName": "app_service_profile",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "UserApplication",
+  "applications": "*",
+  "microserviceName": "UserApplication"
+}

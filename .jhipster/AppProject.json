@@ -1,0 +1,33 @@
+{
+  "name": "AppProject",
+  "fields": [
+    {
+      "fieldName": "projectName",
+      "fieldType": "String",
+      "javadoc": "项目名称"
+    },
+    {
+      "fieldName": "projectDescription",
+      "fieldType": "String",
+      "javadoc": "项目描述",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210107024924",
+  "javadoc": "应用项目表",
+  "entityTableName": "app_project",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "UserApplication",
+  "applications": "*",
+  "microserviceName": "UserApplication"
+}
