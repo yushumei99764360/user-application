@@ -1,5 +1,6 @@
 package com.tk.test.user.web.rest;
 
+import com.tk.test.user.service.AppServiceProfileService;
 import com.tk.test.user.service.JdlRecordService;
 import com.tk.test.user.web.rest.errors.BadRequestAlertException;
 import com.tk.test.user.service.dto.JdlRecordDTO;
@@ -9,6 +10,7 @@ import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -39,6 +41,9 @@ public class JdlRecordResource {
     private String applicationName;
 
     private final JdlRecordService jdlRecordService;
+
+    @Autowired
+    private AppServiceProfileService appServiceProfileService;
 
     public JdlRecordResource(JdlRecordService jdlRecordService) {
         this.jdlRecordService = jdlRecordService;
