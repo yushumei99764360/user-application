@@ -38,6 +38,9 @@ public class AppProjectResourceIT {
     private static final String DEFAULT_PROJECT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_PROJECT_DESCRIPTION = "BBBBBBBBBB";
 
+    private static final String DEFAULT_PROJECT_OFFICE = "AAAAAAAAAA";
+    private static final String UPDATED_PROJECT_OFFICE = "BBBBBBBBBB";
+
     @Autowired
     private AppProjectRepository appProjectRepository;
 
@@ -64,7 +67,8 @@ public class AppProjectResourceIT {
     public static AppProject createEntity(EntityManager em) {
         AppProject appProject = new AppProject()
             .projectName(DEFAULT_PROJECT_NAME)
-            .projectDescription(DEFAULT_PROJECT_DESCRIPTION);
+            .projectDescription(DEFAULT_PROJECT_DESCRIPTION)
+            .projectOffice(DEFAULT_PROJECT_OFFICE);
         return appProject;
     }
     /**
@@ -76,7 +80,8 @@ public class AppProjectResourceIT {
     public static AppProject createUpdatedEntity(EntityManager em) {
         AppProject appProject = new AppProject()
             .projectName(UPDATED_PROJECT_NAME)
-            .projectDescription(UPDATED_PROJECT_DESCRIPTION);
+            .projectDescription(UPDATED_PROJECT_DESCRIPTION)
+            .projectOffice(UPDATED_PROJECT_OFFICE);
         return appProject;
     }
 
@@ -102,6 +107,7 @@ public class AppProjectResourceIT {
         AppProject testAppProject = appProjectList.get(appProjectList.size() - 1);
         assertThat(testAppProject.getProjectName()).isEqualTo(DEFAULT_PROJECT_NAME);
         assertThat(testAppProject.getProjectDescription()).isEqualTo(DEFAULT_PROJECT_DESCRIPTION);
+        assertThat(testAppProject.getProjectOffice()).isEqualTo(DEFAULT_PROJECT_OFFICE);
     }
 
     @Test
@@ -137,7 +143,8 @@ public class AppProjectResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(appProject.getId().intValue())))
             .andExpect(jsonPath("$.[*].projectName").value(hasItem(DEFAULT_PROJECT_NAME)))
-            .andExpect(jsonPath("$.[*].projectDescription").value(hasItem(DEFAULT_PROJECT_DESCRIPTION)));
+            .andExpect(jsonPath("$.[*].projectDescription").value(hasItem(DEFAULT_PROJECT_DESCRIPTION)))
+            .andExpect(jsonPath("$.[*].projectOffice").value(hasItem(DEFAULT_PROJECT_OFFICE)));
     }
     
     @Test
@@ -152,7 +159,8 @@ public class AppProjectResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(appProject.getId().intValue()))
             .andExpect(jsonPath("$.projectName").value(DEFAULT_PROJECT_NAME))
-            .andExpect(jsonPath("$.projectDescription").value(DEFAULT_PROJECT_DESCRIPTION));
+            .andExpect(jsonPath("$.projectDescription").value(DEFAULT_PROJECT_DESCRIPTION))
+            .andExpect(jsonPath("$.projectOffice").value(DEFAULT_PROJECT_OFFICE));
     }
     @Test
     @Transactional
@@ -176,7 +184,8 @@ public class AppProjectResourceIT {
         em.detach(updatedAppProject);
         updatedAppProject
             .projectName(UPDATED_PROJECT_NAME)
-            .projectDescription(UPDATED_PROJECT_DESCRIPTION);
+            .projectDescription(UPDATED_PROJECT_DESCRIPTION)
+            .projectOffice(UPDATED_PROJECT_OFFICE);
         AppProjectDTO appProjectDTO = appProjectMapper.toDto(updatedAppProject);
 
         restAppProjectMockMvc.perform(put("/api/app-projects")
@@ -190,6 +199,7 @@ public class AppProjectResourceIT {
         AppProject testAppProject = appProjectList.get(appProjectList.size() - 1);
         assertThat(testAppProject.getProjectName()).isEqualTo(UPDATED_PROJECT_NAME);
         assertThat(testAppProject.getProjectDescription()).isEqualTo(UPDATED_PROJECT_DESCRIPTION);
+        assertThat(testAppProject.getProjectOffice()).isEqualTo(UPDATED_PROJECT_OFFICE);
     }
 
     @Test
