@@ -5,7 +5,9 @@ entity AppProject {
     /** 项目名称 */
     ProjectName String,
     /** 项目描述 */
-    ProjectDescription String maxlength(100)
+    ProjectDescription String maxlength(100),
+    /*项目所属厅局*/
+    ProjectOffice String
 }
 
 /**
