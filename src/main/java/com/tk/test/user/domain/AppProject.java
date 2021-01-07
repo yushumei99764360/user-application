@@ -32,6 +32,9 @@ public class AppProject implements Serializable {
     @Column(name = "project_description", length = 100)
     private String projectDescription;
 
+    @Column(name = "project_office")
+    private String projectOffice;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -66,6 +69,19 @@ public class AppProject implements Serializable {
     public void setProjectDescription(String projectDescription) {
         this.projectDescription = projectDescription;
     }
+
+    public String getProjectOffice() {
+        return projectOffice;
+    }
+
+    public AppProject projectOffice(String projectOffice) {
+        this.projectOffice = projectOffice;
+        return this;
+    }
+
+    public void setProjectOffice(String projectOffice) {
+        this.projectOffice = projectOffice;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -91,6 +107,7 @@ public class AppProject implements Serializable {
             "id=" + getId() +
             ", projectName='" + getProjectName() + "'" +
             ", projectDescription='" + getProjectDescription() + "'" +
+            ", projectOffice='" + getProjectOffice() + "'" +
             "}";
     }
 }

@@ -26,6 +26,8 @@ public class AppProjectDTO implements Serializable {
     @ApiModelProperty(value = "项目描述")
     private String projectDescription;
 
+    private String projectOffice;
+
     
     public Long getId() {
         return id;
@@ -49,6 +51,14 @@ public class AppProjectDTO implements Serializable {
 
     public void setProjectDescription(String projectDescription) {
         this.projectDescription = projectDescription;
+    }
+
+    public String getProjectOffice() {
+        return projectOffice;
+    }
+
+    public void setProjectOffice(String projectOffice) {
+        this.projectOffice = projectOffice;
     }
 
     @Override
@@ -75,6 +85,7 @@ public class AppProjectDTO implements Serializable {
             "id=" + getId() +
             ", projectName='" + getProjectName() + "'" +
             ", projectDescription='" + getProjectDescription() + "'" +
+            ", projectOffice='" + getProjectOffice() + "'" +
             "}";
     }
 }
