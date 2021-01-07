@@ -1,0 +1,188 @@
+{
+  "name": "AppService",
+  "fields": [
+    {
+      "fieldName": "appStackId",
+      "fieldType": "Long",
+      "javadoc": "应用id",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "serviceName",
+      "fieldType": "String",
+      "javadoc": "应用服务名",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "serviceNameZh",
+      "fieldType": "String",
+      "javadoc": "中文名",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "serviceDescribe",
+      "fieldType": "String",
+      "javadoc": "服务描述",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "serviceType",
+      "fieldType": "Integer",
+      "javadoc": "服务类型",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "guid",
+      "fieldType": "String",
+      "javadoc": "服务全局唯一id",
+      "fieldValidateRules": [
+        "unique",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "gitCompany",
+      "fieldType": "String",
+      "javadoc": "git群组",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "gitUrl",
+      "fieldType": "String",
+      "javadoc": "代码仓库地址"
+    },
+    {
+      "fieldName": "repositoryName",
+      "fieldType": "String",
+      "javadoc": "代码仓库名",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "packageNameSuffix",
+      "fieldType": "String",
+      "javadoc": "包名称后缀",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "serviceOder",
+      "fieldType": "Integer",
+      "javadoc": "服务序号"
+    },
+    {
+      "fieldName": "companyId",
+      "fieldType": "String",
+      "javadoc": "企业唯一id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "serviceProvider",
+      "fieldType": "String",
+      "javadoc": "服务提供商",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "60"
+    },
+    {
+      "fieldName": "remark",
+      "fieldType": "String",
+      "javadoc": "备注"
+    },
+    {
+      "fieldName": "delFlag",
+      "fieldType": "Integer",
+      "javadoc": "删除状态（0，正常，1已删除）",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "createById",
+      "fieldType": "String",
+      "javadoc": "创建人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "createByName",
+      "fieldType": "String",
+      "javadoc": "创建人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间"
+    },
+    {
+      "fieldName": "lastModifierId",
+      "fieldType": "String",
+      "javadoc": "最后更新人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "lastModifierName",
+      "fieldType": "String",
+      "javadoc": "最后更新人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "lastModifyTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "最后更新时间"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210107025124",
+  "javadoc": "应用服务信息",
+  "entityTableName": "app_service",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "UserApplication",
+  "applications": "*",
+  "microserviceName": "UserApplication"
+}

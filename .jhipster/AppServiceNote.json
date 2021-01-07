@@ -1,0 +1,104 @@
+{
+  "name": "AppServiceNote",
+  "fields": [
+    {
+      "fieldName": "serviceId",
+      "fieldType": "Long",
+      "javadoc": "服务id",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "javadoc": "服务说明标题",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String",
+      "javadoc": "服务说明内容",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "300"
+    },
+    {
+      "fieldName": "noteOrder",
+      "fieldType": "Integer",
+      "javadoc": "序号"
+    },
+    {
+      "fieldName": "delFlag",
+      "fieldType": "Integer",
+      "javadoc": "删除状态（0，正常，1已删除）",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "createById",
+      "fieldType": "String",
+      "javadoc": "创建人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "createByName",
+      "fieldType": "String",
+      "javadoc": "创建人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间"
+    },
+    {
+      "fieldName": "lastModifierId",
+      "fieldType": "String",
+      "javadoc": "最后更新人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "lastModifierName",
+      "fieldType": "String",
+      "javadoc": "最后更新人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "lastModifyTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "最后更新时间"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210107025324",
+  "javadoc": "应用服务说明",
+  "entityTableName": "app_service_note",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "UserApplication",
+  "applications": "*",
+  "microserviceName": "UserApplication"
+}

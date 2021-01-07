@@ -1,0 +1,122 @@
+{
+  "name": "AppStack",
+  "fields": [
+    {
+      "fieldName": "appStackName",
+      "fieldType": "String",
+      "javadoc": "应用名",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "appProjectId",
+      "fieldType": "Long",
+      "javadoc": "项目id",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "projectName",
+      "fieldType": "String",
+      "javadoc": "所属项目名",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "appStackOrder",
+      "fieldType": "Integer",
+      "javadoc": "序号"
+    },
+    {
+      "fieldName": "entranceServiceId",
+      "fieldType": "Long",
+      "javadoc": "前端入口服务id",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "appStackType",
+      "fieldType": "Integer",
+      "javadoc": "应用类型，1-应用支撑应用、2-服务治理应用",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "delFlag",
+      "fieldType": "Integer",
+      "javadoc": "删除状态（0，正常，1已删除）",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "createById",
+      "fieldType": "String",
+      "javadoc": "创建人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "createByName",
+      "fieldType": "String",
+      "javadoc": "创建人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "创建时间"
+    },
+    {
+      "fieldName": "lastModifierId",
+      "fieldType": "String",
+      "javadoc": "最后更新人id",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "lastModifierName",
+      "fieldType": "String",
+      "javadoc": "最后更新人",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "40"
+    },
+    {
+      "fieldName": "lastModifyTime",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "最后更新时间"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210107025024",
+  "javadoc": "应用信息表",
+  "entityTableName": "app_stack",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "UserApplication",
+  "applications": "*",
+  "microserviceName": "UserApplication"
+}
